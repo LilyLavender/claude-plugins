@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "lilylavender",
+  "description": "Lily's Claude Code workflow skills: plan-first gate, execute-plan build step, ship chain, open-items scan, and scoped testing checklists.",
+  "owner": {
+    "name": "Lily"
+  },
+  "plugins": [
+    {
+      "name": "dev-workflow",
+      "source": "./plugins/dev-workflow",
+      "description": "The plan -> build -> ship chain: /plan-first asks clarifying questions and gates on explicit approval, /execute-plan builds the approved plan with branch and commit choices made up front, /ship commits, pushes, merges to main and deploys."
+    },
+    {
+      "name": "open-items",
+      "source": "./plugins/open-items",
+      "description": "Scans the current project for what is still outstanding: unfinished plan items, uncommitted or unmerged git state, and loose threads from the conversation."
+    },
+    {
+      "name": "testing-checklist",
+      "source": "./plugins/testing-checklist",
+      "description": "Produces a short manual-test checklist scoped to what a specific non-trivial change could plausibly break, skipping anything already verified."
+    }
+  ]
+}
